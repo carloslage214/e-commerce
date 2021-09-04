@@ -1,29 +1,29 @@
-const ORDER_ASC_BY_NAME = "AZ";
+const ORDER_ASC_BY_NAME = "AZ";   //define las constantes del criterio
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";
-var currentCategoriesArray = [];
-var currentSortCriteria = undefined;
-var minCount = undefined;
+var currentCategoriesArray = [];   //se usa en sortAndShowCategories para tomar el array de categorías
+var currentSortCriteria = undefined;  //se usa en sortAndShowCategories para definir el criterio
+var minCount = undefined;    
 var maxCount = undefined;
 
-function sortCategories(criteria, array){
+function sortCategories(criteria, array){  //ordena segun los cristerios de las constantes
     let result = [];
-    if (criteria === ORDER_ASC_BY_NAME)
+    if (criteria === ORDER_ASC_BY_NAME) 
     {
         result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
+            if ( a.name < b.name ){ return -1; }   //ordena alfabeticamente de forma ascendente A-Z
             if ( a.name > b.name ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
         result = array.sort(function(a, b) {
-            if ( a.name > b.name ){ return -1; }
+            if ( a.name > b.name ){ return -1; }  //ordena de manera alfabetica de forma descendente Z-A
             if ( a.name < b.name ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_BY_PROD_COUNT){
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.productCount);
+            let aCount = parseInt(a.productCount);   //ordena segun cantidad de productos disponibles dentro del rango establecido
             let bCount = parseInt(b.productCount);
 
             if ( aCount > bCount ){ return -1; }
@@ -66,14 +66,14 @@ function showCategoriesList(){
     }
 }
 
-function sortAndShowCategories(sortCriteria, categoriesArray){
-    currentSortCriteria = sortCriteria;
+function sortAndShowCategories(sortCriteria, categoriesArray){  //clasifica y muestra categorias
+    currentSortCriteria = sortCriteria;             //currentSortCriteria es undefined por defecto y toma el parametro sortCriteria
 
-    if(categoriesArray != undefined){
-        currentCategoriesArray = categoriesArray;
+    if(categoriesArray != undefined){               
+        currentCategoriesArray = categoriesArray;  //currentCategoriesArray vine vacio por defecto y toma el parametro categoriesArray
     }
 
-    currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
+    currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray); //toma el array de la categoría y lo ordena segun el criterio definido.
 
     //Muestro las categorías ordenadas
     showCategoriesList();
