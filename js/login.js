@@ -4,3 +4,13 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+
+  function Validar(){  
+  var usuario=document.getElementById("nombre").value; 
+  var password=document.getElementById("contraseña").value; 
+  if (usuario!=="" && password!=="") { 
+  window.location="index.html"; 
+  } 
+  
+  } 
+  
