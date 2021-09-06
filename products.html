@@ -12,6 +12,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -29,6 +30,47 @@
         <h2>Productos</h2>
         <p class="lead">Verás aquí todos los productos del sitio.</p>
     </div>
+<!-- modifico basado en categories.html -->
+    <div class="container">
+      <div class="row">
+          <div class="col text-right">
+              <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                  <label class="btn btn-light active" id="Asc" >
+                      <input type="radio" name="options" autocomplete="off" checked>ASC
+                  </label>
+                  <label class="btn btn-light" id="Desc" >
+                      <input type="radio" name="options" autocomplete="off">DESC
+                  </label>
+                  <label class="btn btn-light" id="sortByPrecio" >
+                      <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Precio.
+                  </label>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Cant.</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="RangoFilterCount">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="LimpiarRangeFilter">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
     <div class="container">
       <div class="row">
         <div class="list-group" id="product-list-container">

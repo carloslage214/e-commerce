@@ -1,3 +1,4 @@
+//codigo comentado en clase actividad en grupo
 const ORDER_ASC_BY_NAME = "AZ";   //define las constantes del criterio
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";
@@ -6,7 +7,7 @@ var currentSortCriteria = undefined;  //se usa en sortAndShowCategories para def
 var minCount = undefined;    
 var maxCount = undefined;
 
-function sortCategories(criteria, array){  //ordena segun los cristerios de las constantes
+function sortCategories(criteria, array){  //ordena segun los criterios de las constantes
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME) 
     {
