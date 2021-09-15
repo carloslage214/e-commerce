@@ -1,4 +1,4 @@
-// intento de codigo pauta 1 y 2 basado en el codigo de categorias
+// intento de codigo pauta 1 y 2 basado en el codigo de categories.js
 const ORDER_ASC_BY_PRECIO = "ASC";   
 const ORDER_DESC_BY_PRECIO = "DESC";
 const ORDER_BY_PROD_PRECIO = "Precio.";
@@ -46,7 +46,7 @@ function sortAndShowProducts(sortCriteria, productsArray){  //clasifica y muestr
 
     currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray); //toma el array de los productos y lo ordena segun el criterio de precios definido.
 
-    //Muestro los productos ordenadas
+    //Muestro los productos ordenados
     showProductsList();
 }
 
